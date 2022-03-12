@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace _01_WebApiAutores.DTOs
 {
-    public class LibroDTO
+    public class LibroPatchDTO
     {
-        public int Id { get; set; }
+        [PrimeraLetraMayuscula]
+        [StringLength(maximumLength: 250, ErrorMessage = "El campo {0} no debe tener más de {1} caracteres")]
+        [Required]
         public string Titulo { get; set; }
-        public DateTime FechaPublicacion { get; set; }
-        public List<AutorDTO> Autores { get; set; }
-        public List<ComentarioDTO> Comentarios  { get; set; }
+        public DateTime fechaPublicacion { get; set; }
     }
 }
